@@ -93,7 +93,7 @@ import { TestComponentRenderer } from "@angular/core/testing";
             this.tempoSubscription.unsubscribe();
         }
         if(this.marcosSubscription) {
-            this.tempoSubscription?.unsubscribe();
+            this.marcosSubscription?.unsubscribe();
         }
         if(this.heartbeatInterval) {
             clearInterval(this.heartbeatInterval);

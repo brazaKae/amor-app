@@ -1,10 +1,13 @@
 <div class="contador-container">
-    <div class="amor-header">
-      <h1>Nosso Amor em Números</h1>
-      <div [@heartBeat]="heartState" class="heart-icon">❤️</div>
-    </div>
-    
-    <div class="contador-display">
+  <div class="amor-header">
+    <h1>Kae & Yasminn</h1>
+    <p class="amor-subtitle">Nossa História de Amor</p>
+    <div [@heartBeat]="heartState" class="heart-icon">❤️</div>
+  </div>
+  
+  <div class="contador-display">
+    <div class="contador-label">Tempo juntos desde o início do nosso relacionamento</div>
+    <div class="contador-wrapper">
       <div class="time-block">
         <div class="time-value">{{ tempoJuntos.dias }}</div>
         <div class="time-label">DIAS</div>
@@ -25,25 +28,32 @@
         <div class="time-label">SEGUNDOS</div>
       </div>
     </div>
-    
-    <div *ngIf="novoMarcoDesbloqueado" class="novo-marco-alerta" [@fadeIn]>
-      <h2>Novo Marco Desbloqueado! 🎉</h2>
-      <div class="marco-card">
-        <div class="marco-header">{{ marcoRecemDesbloqueado?.titulo }}</div>
-        <div class="marco-image" [style.backgroundImage]="'url(' + marcoRecemDesbloqueado?.imagemUrl + ')'"></div>
-        <div class="marco-description">{{ marcoRecemDesbloqueado?.descricao }}</div>
-      </div>
+  </div>
+  
+  <div *ngIf="novoMarcoDesbloqueado" class="novo-marco-alerta" [@fadeIn]>
+    <h2>Novo Marco Desbloqueado! 🎉</h2>
+    <div class="marco-card special-card">
+      <div class="marco-header">{{ marcoRecemDesbloqueado?.titulo }}</div>
+      <div class="marco-image" [style.backgroundImage]="'url(' + marcoRecemDesbloqueado?.imagemUrl + ')'"></div>
+      <div class="marco-description">{{ marcoRecemDesbloqueado?.descricao }}</div>
     </div>
-    
-    <div class="marcos-container">
-      <h2>Marcos do Nosso Amor</h2>
-      <div class="marcos-grid">
-        <div *ngFor="let marco of marcosDesbloqueados" class="marco-card" [@fadeIn]>
-          <div class="marco-header">{{ marco.titulo }}</div>
-          <div class="marco-image" [style.backgroundImage]="'url(' + marco.imagemUrl + ')'"></div>
-          <div class="marco-description">{{ marco.descricao }}</div>
-          <div class="marco-data">Desbloqueado em: {{ marco.data | date:'dd/MM/yyyy' }}</div>
-        </div>
+  </div>
+  
+  <div class="amor-quote">
+    <i class="quote-icon">❝</i>
+    <p>Cada segundo juntos é uma memória que guardaremos para sempre.</p>
+    <div class="quote-by">Kaê & Yasminn</div>
+  </div>
+  
+  <div class="marcos-container">
+    <h2>Momentos Especiais da Nossa História</h2>
+    <div class="marcos-grid">
+      <div *ngFor="let marco of marcosDesbloqueados" class="marco-card" [@fadeIn]>
+        <div class="marco-header">{{ marco.titulo }}</div>
+        <div class="marco-image" [style.backgroundImage]="'url(' + marco.imagemUrl + ')'"></div>
+        <div class="marco-description">{{ marco.descricao }}</div>
+        <div class="marco-data">Desbloqueado em: {{ marco.data | date:'dd/MM/yyyy' }}</div>
       </div>
     </div>
   </div>
+</div>
